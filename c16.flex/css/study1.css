@@ -1,0 +1,17 @@
+/* flex속성사용하려면 무조건 부모태그에 적용해야함 */
+*{margin:0;padding:0;}
+.box{
+    background-color: pink;
+    width: 800px;
+    height: 400px;
+    margin:0 auto;
+    display: flex;
+    flex-wrap:nowrap;
+    /* ->플렉스 속성 적용하면 이 속성을 쓴 태그는 플렉스 컨테이너가 되고,속성을 받는 자식태그는 플렉스 아이템이 되는 것이다. */
+}
+.box section{
+    border: 1px solid blue;
+}
+.a{flex-basis:200px;}
+.b{flex-basis:auto; flex-grow:1;}
+.c{flex-basis:auto; flex-grow:2;}

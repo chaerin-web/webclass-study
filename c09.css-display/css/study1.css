@@ -1,0 +1,16 @@
+h1{
+    background-color: aqua;
+    width: 400px;
+    height: 400px;
+    display: inline;
+}
+strong{
+    background-color: aquamarine;
+    width: 400px;
+    height: 400px;
+    display: block;
+}
+button{
+    width: 200px;
+    height: 200px;
+}

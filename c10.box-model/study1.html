@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스모델</title>
+    <link rel="stylesheet" href="./css/study1.css">
+</head>
+<body>
+    <h1>박스모델</h1>
+    <p>태그의 구성요소에 대해 공부해보자.</p>
+    <div class="a-box">
+        a-box margin은 각각 부여해도 개별적으로 적용되는 것이 아니라 위아래 붙어있는 영역이라면 중첩이되어 적용된다. 상하margin은 더 큰 값으로 중첩적용이 되지만 좌우margin은 중첩적용x 개별적으로 적용된다.
+    </div>
+    <div class="b-box">
+        b-box
+    </div>
+    <div class="c-box">
+        c-box <br>margin:100px(상하) 50px(좌우) -> 축약형 표현
+    </div>
+    <div class="d-box">
+        d-box margin: 100px(상) 50px(좌우) 200px(하) / padding: 10px(상) 20px(우) 30px(하) 40px(좌) 위부터 시계방향으로 돌아가면서 크기가 적용된다
+    </div>
+    <div class="e-box">
+        e-box
+        <br>width:auto; -> 부모태그가 가지고 있는 너비만큼 똑같이 너비를 가짐
+        <br>height:auto; -> 콘텐츠박스 안에 쓰여진 양만큼 높이를 가짐
+    </div>
+    <div class="g-box">
+        g-box Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique quis perferendis natus ut rerum deserunt! Doloribus similique laboriosam fuga voluptatem aliquid ipsum, odio vel! Qui aliquam et ab assumenda.
+    </div>
+    <div class="h-box">
+        h-box
+        <br>margin: 0px auto; -> 페이지 좌우크기를 줄이고 늘려도 컨텐츠를 가운데에 놓을 수 있다.(고정너비)
+        가변너비 고정여백 -> 페이지 좌우크기에 따라 컨텐츠박스의 너비가 맞추어짐. 콘텐츠박스 내 여백은 고정되어있음.
+    </div>
+</body>
+</html>
