@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별똥별 애니메이션</title>
+    <link rel="stylesheet" href="css/study2.css">
+</head>
+<body>
+    <div class="sky" id="sky">
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+    </div>
+
+    <script>
+        const sky = document.getElementById('sky');
+
+        const createShootingStar = () => {
+            const star = document.createElement('div');
+            star.className = 'falling-star';
+
+            const startX = Math.random() * window.innerWidth * 0.6;
+            const startY = Math.random() * window.innerHeight * 0.35;
+            const endX = startX + 250 + Math.random() * 500;
+            const endY = startY + 220 + Math.random() * 320;
+            const duration = 2.8 + Math.random() * 2.2;
+            const delay = Math.random() * 6;
+            const size = 180 + Math.random() * 120;
+
+            star.style.left = `${startX}px`;
+            star.style.top = `${startY}px`;
+            star.style.width = `${size}px`;
+            star.style.setProperty('--end-x', `${endX}px`);
+            star.style.setProperty('--end-y', `${endY}px`);
+            star.style.setProperty('--duration', `${duration}s`);
+            star.style.setProperty('--delay', `${delay}s`);
+
+            sky.appendChild(star);
+        };
+
+        for (let i = 0; i < 14; i++) {
+            createShootingStar();
+        }
+    </script>
+</body>
+</html>

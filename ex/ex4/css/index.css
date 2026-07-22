@@ -1,0 +1,72 @@
+html{
+    padding: 6rem 6rem;
+    background: url(../img/bg.png) no-repeat 50% / cover;
+}
+.banner{
+    height: 599px;
+    background: url(../img/1.jpg) no-repeat 50% / cover;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 120px;
+}
+.banner h1{
+    font-family: 'Aboreto',sans-serif;
+    font-size: 2.5rem;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+.container{width: 1600px; margin: 0 auto;}
+.container h2{
+    font-family: 'Aboreto',sans-serif;
+    font-size: 7.5rem;
+    line-height: 90%;
+    text-transform: uppercase;
+}
+.container>p{
+line-height: 140%;
+text-transform: uppercase;
+margin: 48px 0;
+}
+.figure1,.figure2{
+    display: flex;
+    gap: 1rem;
+}
+.figure1 figure{
+    width: 520px;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.figure1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.figure-contents h3{
+    font-family: 'Aboreto',sans-serif;
+    font-size: 2rem;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0 20px;
+}
+.figure-contents p{
+    line-height: 140%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+.figure2 figure{
+    width: 790px;
+    height: 434px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.figure2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
