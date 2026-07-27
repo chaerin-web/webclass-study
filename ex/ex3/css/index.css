@@ -16,8 +16,9 @@ main{
     justify-content: center;
 }
 .banner h1{
+    text-align: center;
     font-family: 'Aboreto',sans-serif;
-    font-size: 2.5rem;
+    font-size: 50px;
     line-height: 100%;
     text-transform: uppercase;
 }
@@ -54,8 +55,8 @@ main{
     margin: 5rem 0 2.5rem;
 }
 .figure-frame figure{
-    width: 790px;
-    height: 434px;
+    width: 100%;
+    aspect-ratio: 790/434;
     border-radius: 1rem;
     overflow: hidden;
     line-height: 0;

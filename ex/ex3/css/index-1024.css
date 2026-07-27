@@ -1,0 +1,9 @@
+@media(max-width:1024px){
+    html{font-size: 18px;}
+    .figure-frame figure{
+    aspect-ratio: 467/434;
+    }
+    .item1 h2{
+    font-size: 4.5rem;
+    }
+}

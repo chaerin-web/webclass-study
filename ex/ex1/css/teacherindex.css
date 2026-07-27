@@ -1,6 +1,7 @@
 html{
     font-family: 'Pretendard',sans-serif;
     font-size: 20px;
+    list-style: none;
 }
 main{
     padding: 3.75rem 0;
@@ -51,4 +52,24 @@ main{
 }
 .values ul li:last-of-type{
     margin-bottom: 0;
+}
+
+@media (max-width:1440px){
+    html{
+        font-size:18px;
+    }
+    .inner-frame{
+    width:auto;
+    margin: 0 2rem;
+    }
+    .title p br{display:none;}
+}
+@media (max-width:768px){
+    html{
+        font-size:14px;
+    }
+    .inner-frame{
+    width:auto;
+    margin: 0 1rem;
+    }
 }

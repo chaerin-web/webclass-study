@@ -1,0 +1,15 @@
+@media(max-width:768px){
+    html{font-size:14px;}
+    .container{margin: 0 1rem;}
+    .item1{
+    background: url(../img/Vector\ 1.png) no-repeat 50% -50px;
+}
+    .figure-frame{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .figure-frame figure{
+        aspect-ratio: 365/200;
+    }
+    .item1 h2{font-size: 50px;}
+}
