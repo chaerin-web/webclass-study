@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제2</title>
+    <link rel="stylesheet" href="css/ex2.css">
+</head>
+<body>
+    <div class="wrapper">
+    <script>
+    let userName = prompt('이름을 입력해주세요.')
+    let userWeight = Number(prompt('체중 입력(kg)'))
+    let userHeight = Number(prompt('키 입력(cm)'))
+    let userBmi = (userWeight / ((userHeight/100)**2)).toFixed(2)
+
+    let bmiResult = ''
+    if (userBmi < 18.5) {
+        bmiResult = '저체중'
+    } else if (userBmi < 23) {
+        bmiResult = '정상'
+    } else if (userBmi < 25) {
+        bmiResult = '과체중'
+    } else {
+        bmiResult = '비만'
+    }
+
+    document.write(`<h1>나의 체질량 지수(BMI)</h1>
+    <p>체질량지수는 자신의 몸무게(kg)를 키의 제곱(m)으로 나눈 값입니다. 체질량지수는 근육량, 유전적 원인, 다른 개인적 차이를 반영하지 못하는 단점이 있음에도 불구하고 조사자들이나 의료인들이 가장 많이 쓰는 방법 중 하나입니다.</p>
+    <table class="info-table">
+        <tr>
+            <th>이름</th>
+            <td>${userName}</td>
+        </tr>
+        <tr>
+            <th>체중</th>
+            <td>${userWeight}kg</td>
+        </tr>
+        <tr>
+            <th>키</th>
+            <td>${userHeight}cm</td>
+        </tr>
+        <tr>
+            <th>BMI지수</th>
+            <td>${userBmi}</td>
+        </tr>
+    </table>
+    <div class="bmi-chart-wrap">
+        <div class="bmi-label">BMI</div>
+        <div class="bmi-chart">
+            <div class="segment low">저체중</div>
+            <div class="segment normal">정상</div>
+            <div class="segment over">과체중</div>
+            <div class="segment obese">비만</div>
+        </div>
+        <div class="bmi-label">체중</div>
+        <div class="threshold threshold-18">18.5</div>
+        <div class="threshold threshold-23">23</div>
+        <div class="threshold threshold-25">25.00</div>
+    </div>
+    <p class="bmi-result">당신의 BMI 지수는 <strong>${userBmi}</strong>이며, 결과는 <strong>${bmiResult}</strong>입니다.</p>`)
+    </script>
+    </div>
+</body>
+</html>
