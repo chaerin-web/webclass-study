@@ -10,300 +10,34 @@
 <body>
     <h1>우리반 명단</h1>
     <ul class="classmate">
-        <li>
+        <script>
+            for( let i=0 ; i<classRoom.length ; i++){
+
+                let hobbies = '';
+                for(let j=0 ; j<classRoom[i][4].length ; j++){
+                    hobbies = hobbies + `<span>#${classRoom[i][4][j]}</span>`
+                }
+            document.write(`<li>
             <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
+                <img src="./img/${classRoom[i][0]}.png" alt="${classRoom[i][0]} 프사">
             </figure>
             <dl>
                 <dt>이름</dt>
-                <dd>유채린</dd>
+                <dd>${classRoom[i][0]}</dd>
                 <dt>성별</dt>
-                <dd>여자</dd>
+                <dd>${classRoom[i][1]}</dd>
                 <dt>나이</dt>
-                <dd>24</dd>
+                <dd>${classRoom[i][2]}</dd>
                 <dt>결혼</dt>
-                <dd>미혼</dd>
+                <dd>${classRoom[i][3]?'기혼':'미혼'}</dd>
                 <dt>취미</dt>
                 <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
+                    ${hobbies}
                 </dd>
             </dl>
-        </li>
-                <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <figure>
-                <img src="./img/유채린.png" alt="유채린 프사">
-            </figure>
-            <dl>
-                <dt>이름</dt>
-                <dd>유채린</dd>
-                <dt>성별</dt>
-                <dd>여자</dd>
-                <dt>나이</dt>
-                <dd>24</dd>
-                <dt>결혼</dt>
-                <dd>미혼</dd>
-                <dt>취미</dt>
-                <dd>
-                    <span>여행</span>
-                    <span>블로그 작성</span>
-                    <span>요리</span>
-                </dd>
-            </dl>
-        </li>
+            </li>`)
+            }
+        </script>
     </ul>
 </body>
 </html>
