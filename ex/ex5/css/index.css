@@ -1,0 +1,103 @@
+html{
+    font-size: 20px;
+    font-family: 'Pretendard',sans-serif;
+}
+ol,ul{list-style: none;}
+main{
+    padding-top: 8rem;
+}
+.container{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titlebox{
+    border: 1px solid red;
+    width: 100%;
+    max-width: 1600px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 8rem 5rem 8rem;
+}
+.titlebox h1{
+    font-family: 'Aboreto',sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.banner{
+    border: 1px solid red;
+    background: url(../img/banner.jpg) no-repeat 50% / cover;
+    width: 100%;
+    max-width: 1920px;
+    aspect-ratio: 1920/700;
+    color: white;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    margin-bottom: 5rem ;
+}
+.banner h2{
+    font-family: 'Aboreto',sans-serif;
+    text-align: left;
+    font-size: 7.5rem;
+    line-height: 90%;
+    text-transform: uppercase;
+    margin-right: 5rem;
+}
+.signature-list{
+    border: 1px solid red;
+    width: 100%;
+    max-width: 1600px;
+    margin:0 8rem;
+}
+.subtitle{
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+.subtitle h3{
+    font-family: 'Aboreto',sans-serif;
+    font-size: 2rem;
+    line-height: 140%;
+}
+.subtitle p{
+    line-height: 140%;
+}
+.img-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0,1fr));
+    gap: 1rem;
+    justify-content: center;
+}
+figure{
+    width: 100%;
+    aspect-ratio: 520/518;
+    border-radius: 20px;
+    overflow: hidden;
+}
+figure img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media(max-width:1024px){
+    html{font-size: 18px;}
+    .banner{
+    max-width: 1024px;
+    aspect-ratio: 1024/600;
+    justify-content: left;
+    }
+    .banner h2{
+        font-size: 4.4rem;
+        margin-left: 2rem;
+    }
+    .titlebox{
+    max-width: 1024px;
+    padding: 0 2rem 5rem 2rem;
+    }
+    .signature-list{
+        max-width: 1024px;
+        padding: 0 2rem;
+    }
+}
