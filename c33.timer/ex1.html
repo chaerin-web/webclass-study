@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Character Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top, #1f2a44, #0a1226 60%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 900px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+            overflow: hidden;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 28px;
+            background: rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #7dd3fc;
+        }
+
+        .rank {
+            background: #f59e0b;
+            color: #1f2937;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .content {
+            display: flex;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .character {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, #1e293b, #0f172a);
+            border-radius: 20px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .character-wrap {
+            width: 280px;
+            height: 360px;
+            position: relative;
+        }
+
+        .head {
+            width: 100px;
+            height: 100px;
+            background: #f4c7a1;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            left: 90px;
+            box-shadow: inset -8px -8px 0 rgba(0,0,0,0.06);
+        }
+
+        .hair {
+            width: 110px;
+            height: 50px;
+            background: #3b1d0f;
+            border-radius: 50% 50% 35% 35%;
+            position: absolute;
+            top: 14px;
+            left: 85px;
+        }
+
+        .eye {
+            width: 10px;
+            height: 10px;
+            background: #111827;
+            border-radius: 50%;
+            position: absolute;
+            top: 68px;
+        }
+
+        .eye.left { left: 118px; }
+        .eye.right { left: 158px; }
+
+        .body {
+            width: 140px;
+            height: 150px;
+            background: linear-gradient(180deg, #8b5cf6, #4f46e5);
+            border-radius: 18px 18px 26px 26px;
+            position: absolute;
+            top: 130px;
+            left: 70px;
+        }
+
+        .arm {
+            width: 28px;
+            height: 110px;
+            background: #f4c7a1;
+            border-radius: 16px;
+            position: absolute;
+            top: 140px;
+        }
+
+        .arm.left { left: 38px; transform: rotate(20deg); }
+        .arm.right { left: 214px; transform: rotate(-20deg); }
+
+        .sword {
+            width: 14px;
+            height: 150px;
+            background: linear-gradient(180deg, #dbeafe, #60a5fa);
+            border-radius: 10px;
+            position: absolute;
+            top: 120px;
+            left: 228px;
+            transform: rotate(25deg);
+            box-shadow: 0 0 16px rgba(96,165,250,0.7);
+        }
+
+        .sword::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            width: 34px;
+            height: 24px;
+            background: #e2e8f0;
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+
+        .leg {
+            width: 34px;
+            height: 110px;
+            background: #0f172a;
+            border-radius: 18px;
+            position: absolute;
+            top: 270px;
+        }
+
+        .leg.left { left: 95px; }
+        .leg.right { left: 150px; }
+
+        .info {
+            flex: 1.2;
+            padding: 10px 0;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 0;
+            color: #f8fafc;
+        }
+
+        .title {
+            color: #7dd3fc;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 8px 0 22px;
+            letter-spacing: 1px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 12px 14px;
+        }
+
+        .label {
+            display: block;
+            color: #cbd5e1;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #facc15;
+        }
+
+        .skills {
+            margin-top: 10px;
+        }
+
+        .skills h3 {
+            margin-bottom: 10px;
+            color: #e2e8f0;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: linear-gradient(90deg, #22c55e, #14b8a6);
+            color: #062b1d;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .footer {
+            padding: 0 30px 30px;
+        }
+
+        .story {
+            background: rgba(15, 118, 110, 0.18);
+            border: 1px solid rgba(45, 212, 191, 0.25);
+            border-radius: 16px;
+            padding: 16px 18px;
+            line-height: 1.7;
+            color: #dbeafe;
+        }
+
+        @media (max-width: 760px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/ex1.css">
+    <script src="./js/ex1.js"></script>
+</head>
+<body>
+    <div class="popup">
+        <p><span id="popup-second">5</span>초 뒤에 자동으로 팝업이 닫힙니다.</p>
+        <figure>
+            <img src="./img/팝업이미지.jpg" alt="팝업이미지_빛의 검사 업데이트">
+        </figure>
+        <div class="controler">
+            <span>오늘하루안보기</span>
+            <span class="btn_close_popup">닫기</span>
+        </div>
+    </div>
+    <div class="card">
+        <div class="topbar">
+            <div class="logo">ARCANE QUEST</div>
+            <div class="rank">LV. 88</div>
+        </div>
+
+        <div class="content">
+            <div class="character">
+                <div class="character-wrap">
+                    <div class="hair"></div>
+                    <div class="head"></div>
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="body"></div>
+                    <div class="arm left"></div>
+                    <div class="arm right"></div>
+                    <div class="sword"></div>
+                    <div class="leg left"></div>
+                    <div class="leg right"></div>
+                </div>
+            </div>
+
+            <div class="info">
+                <h1 class="name">엘라니스</h1>
+                <div class="title">빛의 검사 / 블레이드 마스터</div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="label">체력</span>
+                        <span class="value">92</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">공격력</span>
+                        <span class="value">97</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">민첩</span>
+                        <span class="value">88</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">마력</span>
+                        <span class="value">81</span>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <h3>특기 스킬</h3>
+                    <div class="skill-list">
+                        <span class="skill">파이어 슬래시</span>
+                        <span class="skill">빛의 창</span>
+                        <span class="skill">회피</span>
+                        <span class="skill">치유</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="story">
+                “어둠의 성벽을 넘어온 자, 빛을 지닌 검은 절대 멈추지 않는다.”
+                영혼의 불꽃을 지닌 엘라니스는 수호의 기사이자 사막의 마지막 전사다.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

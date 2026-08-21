@@ -1,0 +1,25 @@
+.popup{
+    position: fixed;
+    left: calc(50%-250px);
+    top: 50%;
+    width:500px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: rgba(12, 12, 102, 0.253);
+    padding:20px 50px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+}
+.popup figure{margin: 0;}
+.popup img{
+    max-width: 100%;
+}
+.controler{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.popup.off{
+    display: none;
+}
